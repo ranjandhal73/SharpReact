@@ -1,11 +1,12 @@
-function ItemList() {
 
-    const LocationOfExpenditure = 'Bhubaneswar';
+
+
+function ItemList(props) {
     return (
         <>
-            <p>Food Rs: 10 at {LocationOfExpenditure}</p>
-            <p>Petrol Rs: 100 at {LocationOfExpenditure}</p>
-            <p>Movies Rs: 200 at {LocationOfExpenditure}</p>
+           {props.expenseList.map((items)=>{
+                return <p><b>Expense Item:</b>{items.expenstItem} - <b>Expense Price:</b>{items.expensePrice} - <b>LocationOfExpenditure:</b>{items.LocationOfExpenditure}</p>
+           })}         
         </>
     )
 }
