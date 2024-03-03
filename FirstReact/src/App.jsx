@@ -1,65 +1,73 @@
 import ExpenseItem from "./Components/ExpenseItem"
-import ItemList from "./Components/ItemList"
+
 
 function App() {
-
-  const list = [
+  const data = [
     {
-      expenstItem: 'Item1',
-      expensePrice: 'Price1',
-      LocationOfExpenditure: 'Location1',
+      title: 'Movies',
+      amount: 99,
+      location: 'Mumbai',
+      date: '12/01/2024'
     },
     {
-      expenstItem: 'Item2',
-      expensePrice: 'Price2',
-      LocationOfExpenditure: 'Location2',
+      title: 'Books',
+      amount: 25,
+      location: 'New York',
+      date: '15/02/2024'
     },
     {
-      expenstItem: 'Item3',
-      expensePrice: 'Price3',
-      LocationOfExpenditure: 'Location3',
+      title: 'Groceries',
+      amount: 50,
+      location: 'London',
+      date: '22/03/2024'
     },
     {
-      expenstItem: 'Item4',
-      expensePrice: 'Price4',
-      LocationOfExpenditure: 'Location4',
+      title: 'Dinner',
+      amount: 30,
+      location: 'Paris',
+      date: '05/04/2024'
     },
     {
-      expenstItem: 'Item5',
-      expensePrice: 'Price5',
-      LocationOfExpenditure: 'Location5',
+      title: 'Clothing',
+      amount: 75,
+      location: 'Tokyo',
+      date: '18/05/2024'
     },
     {
-      expenstItem: 'Item6',
-      expensePrice: 'Price6',
-      LocationOfExpenditure: 'Location6',
+      title: 'Electronics',
+      amount: 120,
+      location: 'Berlin',
+      date: '26/06/2024'
     },
     {
-      expenstItem: 'Item7',
-      expensePrice: 'Price7',
-      LocationOfExpenditure: 'Location7',
+      title: 'Travel',
+      amount: 200,
+      location: 'Sydney',
+      date: '10/07/2024'
     },
     {
-      expenstItem: 'Item8',
-      expensePrice: 'Price8',
-      LocationOfExpenditure: 'Location8',
+      title: 'Fitness',
+      amount: 45,
+      location: 'Rio de Janeiro',
+      date: '14/08/2024'
     },
     {
-      expenstItem: 'Item9',
-      expensePrice: 'Price9',
-      LocationOfExpenditure: 'Location9',
+      title: 'Home Decor',
+      amount: 80,
+      location: 'Cape Town',
+      date: '02/09/2024'
     },
     {
-      expenstItem: 'Item10',
-      expensePrice: 'Price10',
-      LocationOfExpenditure: 'Location10',
+      title: 'Gadgets',
+      amount: 150,
+      location: 'Seoul',
+      date: '19/10/2024'
     }
   ];
   
   return (
       <>
-        <ExpenseItem />
-        <ItemList expenseList={list} />
+        <ExpenseItem items={data}/>
       </>
   )
 }
