@@ -78,7 +78,7 @@ const App = ()=> {
   return (
       <Card>
         <ExpenseItem items={data}/>
-      </Card>
+      </Card> 
   )
 }
 
