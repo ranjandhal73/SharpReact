@@ -1,5 +1,6 @@
 import ExpenseItem from "./Components/ExpenseThings/ExpenseItem"
 import Card from "./Components/ExpenseThings/UI/Card"
+import ExpenseForm from "./Components/ExpenseThings/ExpenseForm";
 
 const App = ()=> {
   const data = [
@@ -76,7 +77,9 @@ const App = ()=> {
   ];
   
   return (
-      <Card>
+    <Card>
+        <p className='text-6xl text-center p-4 text-white'>Expense Item</p>
+        <ExpenseForm />
         <ExpenseItem items={data}/>
       </Card> 
   )
