@@ -4,7 +4,7 @@ function ExpenseForm(props) {
   const [enteredTitle, setenteredTitle] = useState("");
   const [enteredAmount, setenteredAmount] = useState("");
   const [enteredDate, setenteredDate] = useState("");
-  // const [enteredLocation, setenteredLocation] = useState("");
+  const [enteredLocation, setenteredLocation] = useState("");
 
   function titleHandler(e) {
     setenteredTitle(e.target.value);
@@ -18,9 +18,9 @@ function ExpenseForm(props) {
     setenteredDate(e.target.value);
   }
 
-  // function locationHandler(e) {
-  //   setenteredLocation(e.target.value);
-  // }
+  function locationHandler(e) {
+    setenteredLocation(e.target.value);
+  }
 
   function submitHandler(e) {
     e.preventDefault();
@@ -29,22 +29,19 @@ function ExpenseForm(props) {
       id: Math.random(),
       title: enteredTitle,
       amount: enteredAmount,
+      location: enteredLocation,
       date: new Date(enteredDate).toLocaleDateString(),
     };
-    if (
-      enteredTitle === "" ||
-      enteredAmount === "" ||
-      enteredDate === ""
-    ) {
-      alert("Entered the Details");
+    if ( enteredTitle === "" || enteredAmount === "" || enteredDate === "" || enteredLocation === '' ) {
+          alert("Entered the Details");
     } else {
-      // console.log(expenseData);
-      props.addNewData(expenseData);
+      props.onAddNewData(expenseData);
     }
 
     setenteredTitle("");
     setenteredAmount("");
     setenteredDate("");
+    setenteredLocation("");
   }
 
   return (
@@ -55,34 +52,35 @@ function ExpenseForm(props) {
           <input
             type="text"
             id="expense-title"
-            className="text-black p-0.5 pl-3 text-xl"
+            className="text-black p-0.5 pl-3 text-xl w-36"
             value={enteredTitle}
             onChange={titleHandler}
           />
 
           <label htmlFor="expense-amount">Expense Amount</label>
           <input
-            type="text"
+            type="number"
             id="expense-amount"
-            className="text-black p-0.5 pl-3 text-xl"
+            placeholder="$"
+            className="text-black p-0.5 pl-3 text-xl w-36"
             value={enteredAmount}
             onChange={amountHandler}
           />
 
-          {/* <label htmlFor="expense-amount">Expense Location</label>
+          <label htmlFor="expense-amount">Expense Location</label>
           <input
             type="text"
             id="expense-location"
-            className="text-black p-0.5 pl-3 text-xl"
-            value={enteredAmount}
+            className="text-black p-0.5 pl-3 text-xl w-36"
+            value={enteredLocation}
             onChange={locationHandler}
-          /> */}
+          />
 
           <label htmlFor="expense-Date">Date</label>
           <input
             type="date"
             id="expense-Date"
-            className="text-black p-0.5 pl-3 text-xl"
+            className="text-black p-0.5 pl-3 text-xl w-40"
             value={enteredDate}
             onChange={dateHandler}
           />
@@ -95,6 +93,7 @@ function ExpenseForm(props) {
           </button>
         </form>
       </div>
+      
     </>
   );
 }
