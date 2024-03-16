@@ -1,4 +1,4 @@
-import "./ExpenseItem.css";
+// import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails";
 import ExpenseFilter from "./ExpenseFilter";
