@@ -1,23 +1,27 @@
-// import "./ExpenseItem.css";
+import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpenseChart from "./ExpensesChart";
 
 const ExpenseItem = (props) => {
   const changeFilterHandler = (year) => {
     props.onYearChange(year);
   };
   let filteredItem = props.items;
+
   if (props.year !== null) {
     filteredItem = props.items.filter((item) => {
-      // return item.date.split("/")[2] === props.year;
-      return item.date.substring(6) === props.year;
+      return item.date.split("/")[2] === props.year;
     });
+
   }
+
 
   return (
     <>
       <ExpenseFilter onChangeFilter={changeFilterHandler} />
+      <ExpenseChart  expenses={filteredItem}/>
       {filteredItem.length === 0 && 
         <div className="text-center mt-36">
           <div className="text-4xl p-3 rounded-xl bg-gray-800 inline-block">

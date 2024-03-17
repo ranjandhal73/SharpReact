@@ -37,13 +37,14 @@ function ExpenseForm(props) {
           alert("Entered the Details");
     } else {
       props.onAddNewData(expenseData);
+      setisFormVisible(false)
     }
 
     setenteredTitle("");
     setenteredAmount("");
     setenteredDate("");
     setenteredLocation("");
-    setisFormVisible(false)
+    
   }
 
   const cancelHandler = (e) =>{
@@ -121,57 +122,3 @@ function ExpenseForm(props) {
 }
 
 export default ExpenseForm;
-
-/*
-
-  /*<div className="flex items-center justify-center text-xl flex-wrap">
-        <form className="flex gap-2 items-center text-center flex-wrap">
-          <label htmlFor="expense-title">Expense title</label>
-          <input
-            type="text"
-            id="expense-title"
-            className="text-black p-0.5 pl-3 text-xl w-36"
-            value={enteredTitle}
-            onChange={titleHandler}
-          />
-
-          <label htmlFor="expense-amount">Expense Amount</label>
-          <input
-            type="number"
-            id="expense-amount"
-            placeholder="$"
-            className="text-black p-0.5 pl-3 text-xl w-36"
-            value={enteredAmount}
-            onChange={amountHandler}
-          />
-
-          <label htmlFor="expense-amount">Expense Location</label>
-          <input
-            type="text"
-            id="expense-location"
-            className="text-black p-0.5 pl-3 text-xl w-36"
-            value={enteredLocation}
-            onChange={locationHandler}
-          />
-
-          <label htmlFor="expense-Date">Date</label>
-          <input
-            type="date"
-            id="expense-Date"
-            className="text-black p-0.5 pl-3 text-xl w-40"
-            value={enteredDate}
-            onChange={dateHandler}
-          />
-
-          <button 
-            className="bg-red-700 rounded-xl text-center py-2 px-4 border border-white hover:border-opacity-50"
-            onClick={cancelHandler}
-          >Cancel</button>
-
-          <button
-            className="bg-green-700 rounded-xl text-center py-2 px-4 border border-white hover:border-opacity-50"
-            onClick={submitHandler}
-          >Add Expense</button>
-        </form>
-      </div>*/
-
